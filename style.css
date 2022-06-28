@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -17,10 +19,8 @@
   padding: 20px;
 } */
 body{
-  min-height: 100vh;
-  overflow-x: hidden;
-  
-  
+  height: 100vh;
+  overflow-x: hidden; 
 }
 
 /* .container {
@@ -32,6 +32,7 @@ body{
   max-width: 100%;
   width: 800px;
 } */
+
 /* Page 1*/
 /* Dividimos la pagina en 3 columnas y 2 filas*/
 .grid-container{
@@ -42,23 +43,32 @@ body{
                  "main header header"
                  "main nom1    nom2"
                  "main nom3    nom2";
-  height: 100vh;
-  
+  height: 100vh;  
 }
 /* Asignamos nombre a cada área según lo definido anteriormente*/
 header{
   position: relative;
   grid-area: header;
-  
+  padding: 3px 30px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 main{
   position: relative;
   grid-area: main;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;    
+  justify-content: end;
+  gap: 35px;
+  padding-bottom: 20px;
 }
 section.nom1{
   position: relative;
   grid-area: nom1;
+  padding-top: 20px;
   
 }
 section.nom2{
@@ -71,26 +81,27 @@ section.nom2{
 section.nom3{
   position: relative;
   grid-area: nom3;
-  
+  padding-top: 30px;
+  font-size: 13.2px;
+  color: #fff;
+  font-family: 'arial';
+  padding-right: 64.5px;
+  font-weight: 1;  
+  word-spacing: 5px;  
 }
 
 /*   */
 section.background{
   position: absolute;
   width: 100%;
-  height: 100vh;
-  
+  height: 100vh;  
   overflow: hidden;
 }
-header{
-  /* position: absolute; */
-  
-  padding: 3px 30px 0px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+div section img.background-img{
+  width: 100%;
+  height: 100%;
 }
+
 header div.contenido{
   display: flex;
   align-items: center;
@@ -110,7 +121,8 @@ header  ul{
 }
 header ul li{
   list-style: none;
-  margin-left: 20px;
+  margin-left: 30px;
+  
 }
 header ul li a{
   text-decoration: none;
@@ -124,42 +136,18 @@ header ul li a.active{   /* mantiene fijo el hover sobre la clase active*/
   background: rgb(76, 76, 227);
   color: #fff;     
 }
-main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;    
-  justify-content: end;
-  gap: 30px;
-  padding-bottom: 10px;    
-}
+
 section div.text{
   color: #fff;
   text-transform: capitalize;
+  width: 90%;
   
 }
 section div h1{
   font-size: 65px;
   letter-spacing: 2px;
   font-weight: 700;
-  font-style: normal;
-  
-  
-}
-section h3{
-  font-size: 13px;
-  color: #fff;
-  font-family: 'arial';
-  padding-right: 50px;
-  font-weight: 100;
-  letter-spacing: 2px;
-  word-spacing: 5px;
-  
-  
-}
-section div.girl{
-  margin: 0%;
-  padding: 0%;
+  font-style: normal;  
 }
 
 section div img.girl-tough{
@@ -173,7 +161,7 @@ section div.datos{
   display: flex;
   align-items: center;
   width: 380px;
-  height: 65px;
+  height: 85px;
   margin-top: 20px;
   border-radius: 5px;
   justify-content: space-around;
@@ -192,9 +180,7 @@ section div div.datos-box{
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  
-  
+  align-items: flex-end;  
 }
 section div div h3.cypher{
   color: red;
@@ -207,6 +193,7 @@ section div div  div h3.cypher-down{
 }
 section div div  div.datos-box-numbers{
   display: flex;
+  
 }
 /* Page2 */
 div.sec{
@@ -217,7 +204,7 @@ div.sec{
   align-content: center;
   padding: 100px;
   height: 100vh;
-  background: #aec4f2;
+  background: #e7eaf3;
   color: rgb(2, 40, 120);
 }
 .sec-12{
@@ -229,9 +216,12 @@ div.sec{
   margin-bottom: 10px;
   color: #fff;
 }
+.cards{
+  display: flex;  
+}
 .card{
- margin: 50px 20px 20px 20px;
- padding: 10px 10px 0px 40px;
+ margin: 50px 15px 20px 5px;
+ padding: 20px 20px 20px 20px;
  display: flex; 
  flex-direction: column;
  text-align: left;
@@ -240,23 +230,20 @@ div.sec{
  background-color: #fff;
  background-size: 100px;
  border-radius: 5px;
- box-shadow: 5px 10px #f0ecec;
+ box-shadow: 5px 10px #ebe9e9;
+ height: 260px;
  
-}
-.cards{
-  display: flex;
-  
 }
 .card img{
   width: 100px;
   height: 100px;
   align-items: center;
   display: flex;
-  padding: 10px ;
-  
 }
 .contenido-texto-card{
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 /* Page 3 */
 
@@ -270,7 +257,7 @@ div.sec4{
   align-items: center;
   padding: 80px;
   min-height: 100vh;
-  background: #f5f6f8;
+  background: #a9bfec;
   color: rgb(2, 40, 120);
   
 }
@@ -287,7 +274,7 @@ div.sec4{
 .cards4-row1{
   display: flex; 
   align-items: center;
-  background-color: #fff;
+  
   background-size: 100px;
   border-radius: 5px;    
   margin-bottom: 30px;   
@@ -295,7 +282,7 @@ div.sec4{
 .cards4-row2{
   display: flex; 
   align-items: center;
-  background-color: #fff;
+  
   background-size: 100px;
   border-radius: 5px;
     
@@ -309,6 +296,7 @@ div.sec4{
 }
 .card4{
   margin: 5px 10px 10px 20px;
+  background-color: #fff;
   box-shadow: 5px 10px #f0ecec; 
   
 }
@@ -370,4 +358,65 @@ div.sec5{
 }
 .contenido-texto-card5{
   width: 100%;
+}
+/* Pag 6 */
+div.sec6{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+  min-height: 100vh;
+  background: #a9bfec;
+  color: rgb(2, 40, 120);
+  
+}
+.sec6 p{
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: rgb(2, 40, 120);
+}
+.sec6-12{
+  width: 40%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cards6{  
+  display: flex;   
+  flex-direction: column;
+  align-content: center;
+  align-items: center;  
+}
+.cards6-row1{
+  
+  background-size: 100px;
+  margin-bottom: 30px;   
+}
+.cards6-row1-img{
+  width: 80%;
+  height: 20%;
+  margin-bottom: 20px;
+}
+.cards6-row2{
+  display: flex; 
+  align-items: center;  
+  background-size: 100px;
+  border-radius: 5px;    
+}
+
+.card6-contenido{
+  margin: 5px 10px 10px 20px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+.card6-img{
+  position: absolute;
+  margin: 5px 10px 10px 20px;
+  width: 50px;
+  height: 100px;
+  
+}
+.contenido-texto-card6{
+  padding: 9px 9px 9px 9px;
+  width: 90%;
 }
