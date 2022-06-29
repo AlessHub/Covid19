@@ -172,27 +172,31 @@ section div img.flag{
   height: 40px;
 }
 section div div div img.red-down{
-  width: 20px;
+  width: 30px;
   background: none;
   
 }
 section div div.datos-box{
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;  
+  flex-direction: column;  
+  align-items: center;
+  
 }
-section div div h3.cypher{
+section div div h2.cypher{
   color: red;
+  margin-left: 100px;
 }
 section div div  div h3.cypher-up{
-  color: red;
+  background: #eb6d06;
+  border-radius: 3px;
 }
 section div div  div h3.cypher-down{
-  color: red;
+  background-color: rgb(27, 169, 27);
+  border-radius: 3px;
 }
 section div div  div.datos-box-numbers{
   display: flex;
+  gap: 10px;
   
 }
 /* Page2 */
