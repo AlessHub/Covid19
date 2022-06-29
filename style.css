@@ -366,7 +366,7 @@ div.sec6{
   flex-direction: column;
   align-items: center;
   padding: 80px;
-  min-height: 100vh;
+  min-height: 150vh;
   background: #a9bfec;
   color: rgb(2, 40, 120);
   
@@ -384,40 +384,50 @@ div.sec6{
 .cards6{  
   display: flex;   
   flex-direction: column;
-  align-content: center;
   align-items: center;  
-  justify-items: flex-end;
 }
-.cards6-row1{
-  
+.cards6-row1{   
   background-size: 100px;
-  margin-bottom: 30px;   
+  margin-bottom: 30px;  
 }
-.cards6-row1-img{
-  width: 80%;
+.cards6-row1-img{  
+  width: 90%;
   height: 20%;
-  margin-bottom: 20px;
+  padding: 0px 0px 0px 80px;
 }
 .cards6-row2{
+  position: absolute;
   display: flex; 
   align-items: center;  
   background-size: 100px;
   border-radius: 5px;  
   background-color: aqua;  
+  width: 80%;
+  height: 30%;
+  margin-top: 30%;
 }
 
 .card6-contenido{
-  margin: 5px 10px 10px 20px;
+  margin: 0px 10px 0px 40px;
   background-color: rgb(255, 255, 255);
-  width: 100%;
+  width: 50%;
+  height: 70%;
 }
+
 .card6-img-phone{
-  /* position: absolute; */
-  width: 100px;
-  height: 200px;
+  
+  position: relative;
+  width: 200px;
+  height: 380px;
+  
   
 }
 .contenido-texto-card6{
   padding: 9px 9px 9px 9px;
   width: 90%;
+  
+  
+}
+.contenido-texto-card6-style{
+  font-size: 45px;
 }
