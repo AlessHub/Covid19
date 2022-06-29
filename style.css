@@ -367,14 +367,13 @@ div.sec6{
   align-items: center;
   padding: 80px;
   min-height: 150vh;
-  background: #a9bfec;
+  background: #fff;
   color: rgb(2, 40, 120);
   
 }
 .sec6 p{
   font-size: 12px;
   margin-bottom: 10px;
-  color: rgb(2, 40, 120);
 }
 .sec6-12{
   width: 40%;
@@ -401,17 +400,19 @@ div.sec6{
   align-items: center;  
   background-size: 100px;
   border-radius: 5px;  
-  background-color: aqua;  
-  width: 80%;
-  height: 30%;
+  background-color: rgb(18, 98, 173);  
+  width: 73%;
+  height: 35%;
   margin-top: 30%;
+  border-radius: 5px;
 }
 
 .card6-contenido{
   margin: 0px 10px 0px 40px;
-  background-color: rgb(255, 255, 255);
   width: 50%;
   height: 70%;
+  color: #fff;
+  
 }
 
 .card6-img-phone{
@@ -419,12 +420,14 @@ div.sec6{
   position: relative;
   width: 200px;
   height: 380px;
+  margin: 40px 10px 0 600px;
   
   
 }
 .contenido-texto-card6{
   padding: 9px 9px 9px 9px;
   width: 90%;
+  color: #fff;
   
   
 }
@@ -491,4 +494,49 @@ div.sec7{
 }
 .card7-icon-content{
   display: flex;
+}
+/* Page 8 */
+
+footer.pie{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+  background-color: rgb(2, 40, 120);
+  color: #fff;
+  
+}
+footer div div.pie-1-1{
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+footer div div img.logo{
+  width: 30px;
+  filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(151deg) brightness(105%) contrast(106%);
+}
+footer div.pie-1{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  gap: 30px;
+}
+footer div.pie-2{
+  
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  gap: 17px;  
+}
+.pie-1-2-text{
+  letter-spacing: 2px;
+  
+}
+.pie-1-3{
+  display: flex;
+  gap: 15%;
 }
