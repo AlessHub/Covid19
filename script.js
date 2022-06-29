@@ -25,7 +25,7 @@
 // `;
 // main.innerHTML = cardHTML;
 // }
-const url = 'https://disease.sh/v3/covid-19/countries/{spain}';
+const url = 'https://disease.sh/v3/covid-19/countries/spain?strict=true';
 
 fetch(url)
 .then(response => response.json())
