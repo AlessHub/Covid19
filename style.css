@@ -4,26 +4,145 @@
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+}
+
 body {
   background-color: #686de0;
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* this is for covid tracker */
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 20px;
-}
-
-.container {
-  background-color: #fff;
+  background-color: whitesmoke;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   padding: 50px 20px;
   text-align: center;
-  max-width: 100%;
-  width: 800px;
-  height: 800px;
+  max-width: 25%;
+  height: auto;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.totalcase {
+  background-color: #ff00001c;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 50px 0px 50px;
+}
+
+.casestext {
+  color: #080081;
+  font-weight: 800;
+}
+
+.casesnumbers {
+  font-size: 20px;
+}
+
+.activecase {
+  background-color: #ffa50042;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 50px 0px 50px;
+}
+
+
+.recoveredcase {
+  background-color: #56ff002b;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 50px 0px 50px;
+}
+
+
+.deathcase {
+  background-color: #18b4ff21;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 50px 0px 50px;
+}
+
+.todayChanges {
+  background-color: white;
+}
+
+/* this is for top 10 countries */
+
+.topcountries {
+  width: 100%;
+  height: auto;
+}
+
+.countries {
+  list-style: none;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0px;
+}
+
+.countryflag {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.countrycard {
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 0px rgb(0 0 0 / 10%), 0 6px 1px rgb(0 0 0 / 10%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.countryname {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* this is for dropdownmenu stats */
+
+.casescontainer {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+}
+
+.countrydata {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
 }
