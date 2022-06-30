@@ -18,10 +18,10 @@ getData()
 const createDataCard = (result) => {
   const cardHTML = `
       <div id="maincontainer" class="maincontainer">
-        <div class="container">
+        <div class="container" id="container">
           <h1>COVID-19 TRACKER</h1>
-          <section class="stats">
-              <div class="totalcase" id="stat1"><span class="casestext">Total Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayCases}</span><span class="casesnumbers" style="color:red; font-weight: 800;">${result.cases}</span></div></div>
+          <section class="stats" id="stats">
+              <div class="totalcase"><span class="casestext">Total Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayCases}</span><span class="casesnumbers" style="color:red; font-weight: 800;">${result.cases}</span></div></div>
               <div class="activecase"><span class="casestext">Active Case</span> <span class="casesnumbers" style="color:orange; font-weight: 800;">${result.active}</span></div>
               <div class="recoveredcase"><span class="casestext">Recovered Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayRecovered}</span><span class="casesnumbers" style="color:limegreen; font-weight: 800;">${result.recovered}</span></div></div>
               <div class="deathcase"><span class="casestext">Death Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayDeaths}</span><span class="casesnumbers" style="color:blue; font-weight: 800;">${result.deaths}</span></div></div>
@@ -31,10 +31,20 @@ const createDataCard = (result) => {
           </section>
         </div>
         <div class="container-2" id="container-2">
-          <label class="dropdownlist" id="dropdownlist">
-          </label>
-          <div class="casescontainer" id="casescontainer">
+          <div class="dropdowncontainer" id="dropdowncontainer">
+            <label class="dropdownlist" id="dropdownlist">
+            </label>
+            <div class="casescontainer" id="casescontainer">
+            </div>
           </div>
+          <div class="mapa-container" id="mapa-container"><img class="mapa" src="/images/mapa.png"/></div>
+          <section class="alt-stats-container" id="alt-stats-container">
+          <div class="alt-stats"><span class="alt-info">Total Confirmed</span><span class="alt-stats-result" style="color: #0b0b4e;">${result.cases}</span></div>
+          <div class="alt-stats"><span class="alt-info">Total Recovered</span><span class="alt-stats-result" style="color: #0b0b4e;">${result.recovered}</span></div>
+          <div class="alt-stats"><span class="alt-info">Total Deaths</span><span class="alt-stats-result" style="color: #0b0b4e;"> ${result.deaths}</span></div>
+          <div class="alt-stats"><span class="alt-info">New Deaths</span><span class="alt-stats-result" style="color: #0b0b4e;">${result.todayDeaths}</span></div>
+          <div class="alt-stats"><span class="alt-info">Help No.</span><span class="alt-stats-result" style="color: #0b0b4e;">198</span></div>
+        </section>
         </div>
       </div>
       `;
