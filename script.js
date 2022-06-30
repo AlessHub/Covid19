@@ -1,3 +1,5 @@
+
+
 async function getData() {
     const config = {
         headers: {
@@ -18,10 +20,10 @@ const createDataCard = (result) => {
         <div class="container">
           <h1>COVID-19 TRACKER</h1>
           <section class="stats">
-              <div class="totalcase" id="stat1"><span class="casestext">Total Case</span><span class="todayChanges">+${result.todayCases}</span><span class="casesnumbers">${result.cases}</span></div>
-              <div class="activecase"><span class="casestext">Active Case</span> <span class="casesnumbers">${result.active}</span></div>
-              <div class="recoveredcase"><span class="casestext">Recovered Case</span><span class="todayChanges">+${result.todayRecovered}</span><span class="casesnumbers">${result.recovered}</span></div>
-              <div class="deathcase"><span class="casestext">Death Case</span><span class="todayChanges">+${result.todayDeaths}</span><span class="casesnumbers">${result.deaths}</span></div>
+              <div class="totalcase" id="stat1"><span class="casestext">Total Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayCases}</span><span class="casesnumbers" style="color:red; font-weight: 800;">${result.cases}</span></div></div>
+              <div class="activecase"><span class="casestext">Active Case</span> <span class="casesnumbers" style="color:orange; font-weight: 800;">${result.active}</span></div>
+              <div class="recoveredcase"><span class="casestext">Recovered Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayRecovered}</span><span class="casesnumbers" style="color:limegreen; font-weight: 800;">${result.recovered}</span></div></div>
+              <div class="deathcase"><span class="casestext">Death Case</span><div class="statscontainer"><span class="todayChanges">+${result.todayDeaths}</span><span class="casesnumbers" style="color:blue; font-weight: 800;">${result.deaths}</span></div></div>
           </section>
           <h2>Top 10 Country</h2>
           <section class="topcountries" id="topcountries">
@@ -70,53 +72,61 @@ const createTopCountry = (result) => {
   ul.appendChild(li);
   
   const liHTML = `
-  <span class="countryname"><img class="countryflag" src="${item.countryInfo.flag}">${item.country}</span> <span class="casesnumber">${item.cases}</span>
+  <span class="countryname"><img class="countryflag" src="${item.countryInfo.flag}">${item.country}</span> <span class="casesnumber" style="color:#080081; font-weight:600; opacity:80%;">${item.cases}</span>
   `;
   
   li.innerHTML = liHTML;
   });
 }
 
+
+
 const countryListDropdown = (result) => {
   let countries = result.slice(0, 230),
   select = document.createElement('select');
+  select.setAttribute("id", "selectdropdown");
   
   document.getElementById('dropdownlist').appendChild(select);
 
   countries.forEach(item => {
     let option = document.createElement('option');
+    option.setAttribute("id", "option")
     select.appendChild(option);
+    
+    
     const optionHTML = `
     ${item.country}
     `;
     option.innerHTML = optionHTML;
   })
 
-
-  function update() {
-    var select = document.getElementById('language');
-    var option = select.options[select.selectedIndex];
-
-    document.getElementById('value').value = option.value;
-    document.getElementById('text').value = option.text;
-  }
-
-  update();
-
-  var text = select.options[select.selectedIndex].text;
-  console.log(text);  
-
-  const casescontainerHTML = `
-            <div class="countrydata"><span>Total Cases</span><span>101010</span></div>
-            <div class="countrydata"><span>Total Recovered</span><span> 1010101</span></div>
-            <div class="countrydata"><span>New Cases</span><span>1010101</span></div>
-            <div class="countrydata"><span>Total Deaths</span><span>1010101</span></div>
-            <div class="countrydata"><span>Total Active</span><span>1010101</span></div>
-            <div class="countrydata"><span>New Deaths</span><span>1010101</span></div>
-  `;
+  select.addEventListener('change', function() {
+    option = select.options[select.selectedIndex];
+    async function getdropdownCountry() {
+      const config = {
+        headers: {
+          "Accept": "application/json"
+        }
+      }
+      
+      const res = await fetch('https://disease.sh/v3/covid-19/countries/'+option.text, config);
+      const result = await res.json();
+      console.log(result.cases);
+      console.log(option.text);
+      const casescontainerHTML = `
+      <div class="countrydata"><span class="countryinfo">Total Cases</span><span class="countryresult" style="color: blue;">${result.cases}</span></div>
+      <div class="countrydata"><span class="countryinfo">Total Deaths</span><span class="countryresult" style="color: red;">${result.deaths}</span></div>
+      <div class="countrydata"><span class="countryinfo">Total Recovered</span><span class="countryresult" style="color: limegreen;"> ${result.recovered}</span></div>
+      <div class="countrydata"><span class="countryinfo">Total Active</span><span class="countryresult" style="color: rgb(36, 124, 255);">${result.active}</span></div>
+      <div class="countrydata"><span class="countryinfo">New Cases</span><span class="countryresult" style="color: orange;">${result.todayCases}</span></div>
+      <div class="countrydata"><span class="countryinfo">New Deaths</span><span class="countryresult" style="color: red;">${result.todayDeaths}</span></div>
+    `;
 
   casescontainer.innerHTML = casescontainerHTML;
 }
+getdropdownCountry()})}
+
+
 
 async function getCountryList() {
   const config = {
@@ -128,6 +138,16 @@ async function getCountryList() {
   const result = await res.json();
   console.log(result);
   countryListDropdown(result);
+  const casescontainerHTML = `
+              <div class="countrydata"><span class="countryinfo">Total Cases</span><span class="countryresult" style="color: blue;">${result[0].cases}</span></div>
+              <div class="countrydata"><span class="countryinfo">Total Deaths</span><span class="countryresult" style="color: red;">${result[0].deaths}</span></div>
+              <div class="countrydata"><span class="countryinfo">Total Recovered</span><span class="countryresult" style="color: limegreen;"> ${result[0].recovered}</span></div>
+              <div class="countrydata"><span class="countryinfo">Total Active</span><span class="countryresult" style="color: rgb(36, 124, 255);">${result[0].active}</span></div>
+              <div class="countrydata"><span class="countryinfo">New Cases</span><span class="countryresult" style="color: orange;">${result[0].todayCases}</span></div>
+              <div class="countrydata"><span class="countryinfo">New Deaths</span><span class="countryresult" style="color: red;">${result[0].todayDeaths}</span></div>
+    `;
+
+  casescontainer.innerHTML = casescontainerHTML;
 }
 
 getCountryList()
