@@ -3,10 +3,10 @@
 /* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {
-  #main {
+  #maincontainer {
     display: flex;
     flex-direction: column;
-}
+  }
   #casescontainer {
     grid-template-columns: auto;
     margin-left: 25px;
@@ -18,27 +18,22 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-  #main {
+  #maincontainer {
     display: flex;
     flex-direction: column;
-    
-}
+  }
   #casescontainer {
   grid-template-columns: auto;
   margin-left: 25px;
   display: grid;
   gap: 50px;
-}
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-  #main {
-    display: flex;
-    flex-direction: row;
-}
-#casescontainer {
+  #casescontainer {
   grid-template-columns: auto auto;
   margin-left: 25px;
   display: grid;
@@ -53,16 +48,16 @@
   box-sizing: border-box;
 }
 
-main {
+#maincontainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  background-color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
 }
 
 body {
-  background-color: whitesmoke;
-  font-family: 'Roboto', sans-serif;
-  height: 100vh;
-  margin: 0;
+  margin: 0px;
 }
 
 

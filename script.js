@@ -17,6 +17,7 @@ getData()
 
 const createDataCard = (result) => {
   const cardHTML = `
+      <div id="maincontainer" class="maincontainer">
         <div class="container">
           <h1>COVID-19 TRACKER</h1>
           <section class="stats">
@@ -35,6 +36,7 @@ const createDataCard = (result) => {
           <div class="casescontainer" id="casescontainer">
           </div>
         </div>
+      </div>
       `;
   main.innerHTML = cardHTML;
 };
