@@ -28,6 +28,8 @@ const createDataCard = (result) => {
           </section>
         </div>
         <div class="container-2" id="container-2">
+          <section class="topcountries" id="topcountries">
+          </section>
           <label class="dropdownlist" id="dropdownlist">
           </label>
           <div class="casescontainer" id="casescontainer">
