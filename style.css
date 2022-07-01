@@ -262,7 +262,7 @@ div.se{
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 40px;
+  font-size: 20px;
   bottom: 100px;
 }
 
@@ -270,7 +270,7 @@ div.se{
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
   color: rgb(8, 56, 119);
 }
 
@@ -301,7 +301,7 @@ div.se{
   align-content: center;
   width: 50vw;
   padding: 15px 10px;
-  margin: 0 40px;
+  margin: 0 40px 0 ;
   
 }
 
@@ -309,9 +309,10 @@ div.se{
   position: relative;
   display: flex;
   justify-content: center;
-  width: 200px;
-  height: 120px;
+  width: 180px;
+  height: 100px;
   background: white;
+  margin-right: 20px;
 }
 
 .hex-image:before {
@@ -321,7 +322,7 @@ div.se{
   left: 0;
   width: 0;
   height: 0;
-  border-left: 100px solid transparent;
+  border-left: 80px solid transparent;
   border-right: 100px solid transparent;
   border-bottom: 60px solid white;
 }
@@ -334,7 +335,7 @@ div.se{
   width: 0;
   height: 0;
   border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
+  border-right: 80px solid transparent;
   border-top: 60px solid white;
 }
 
@@ -464,7 +465,7 @@ div.sec5{
  padding: 15px 55px 15px 15px;
  display: flex; 
  flex-direction: column;    
- background-color: rgb(55, 18, 190);
+ background-color: rgb(33, 10, 118);
  background-size: 100px;
  border-radius: 5px;  
  width: 85%;   
