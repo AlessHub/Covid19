@@ -5,7 +5,11 @@ $(document).ready( function () {
     $('#example').DataTable({
       'ajax' : 'data.json',
       'columns' : [
-          {'data' : 'country'},
+          {'data' : 'countryInfo.flag',
+          render: function (data,type) {
+                return `<img class="imagetableajax" src="${data}">`
+          }
+          },
           {'data' : 'country'},
           {'data' : 'cases'},
           {'data' : 'oneCasePerPeople'},

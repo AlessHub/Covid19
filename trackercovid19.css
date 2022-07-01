@@ -192,6 +192,8 @@ main {
   width: 110%;
   background-color: #fff;
   
+  justify-content: left;
+  
 }
 
 .tableajax{
@@ -201,6 +203,11 @@ main {
   background-color: #fff;
   border-radius: 5px;   
   
+}
+
+.imagetableajax{
+  width: 30px;
+  height: 18px;
 }
 
 /* fin ajax table */
