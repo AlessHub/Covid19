@@ -18,9 +18,29 @@ body {
 .navbar{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin: 0px 10px 0px 10px;
+  align-items: center;
+  padding-top: 40px;
+  margin: 0px 15px 0px 15px;
+  width: 70px;
+  
+  
 }
+body div div{
+  padding-bottom: 20px;
+  
+}
+
+body div div a{
+  text-decoration: none;
+  align-content: space-around;
+  
+}
+body div div a:hover{
+  background: #080081;
+  color: #fff; 
+  padding: 10px 10px 10px 10px;
+}
+
 
 
 /* fin navbar */
